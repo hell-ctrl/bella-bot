@@ -1,12 +1,19 @@
 {
-  "name": "bot",
-  "version": "1.0.0",
+  "name": "bella-bot",
+  "version": "1.1.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "dependencies": {
+    "@distube/ytdl-core": "^4.16.4",
     "baileys": "^6.7.13",
+    "cfonts": "^3.3.0",
     "cli-color": "^2.0.4",
+    "lodash": "^4.17.21",
     "node-webpmux": "^3.2.0",
-    "pino": "^9.6.0"
+    "pino": "^9.6.0",
+    "yt-search": "^2.12.1"
   }
 }

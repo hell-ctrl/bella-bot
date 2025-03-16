@@ -14,17 +14,24 @@ function isQuotedVideo(messageInfo) {
   return Boolean(quotedImage || imageCaption);
 }
 
+function isQuotedSticker(messageInfo) {
+  const quotedSticker = messageInfo?.message?.extendedTextMessage?.contextInfo?.quotedMessage?.stickerMessage;
+
+  return Boolean(quotedSticker);
+}
+
 function getMediaMessageContent(messageInfo) {
-  const mediaQuoted =
-    messageInfo?.message?.extendedTextMessage?.contextInfo?.quotedMessage;
+  const mediaQuoted = messageInfo?.message?.extendedTextMessage?.contextInfo?.quotedMessage;
 
   return (
     mediaQuoted?.imageMessage ||
     mediaQuoted?.videoMessage ||
     mediaQuoted?.stickerMessage ||
+    mediaQuoted?.audioMessage ||
     messageInfo?.message?.imageMessage ||
     messageInfo?.message?.videoMessage ||
     messageInfo?.message?.stickerMessage ||
+    messageInfo?.message?.audioMessage ||
     null
   );
 }
@@ -43,6 +50,7 @@ async function getFileBufferFromWhatsapp(media, mediaType) {
 module.exports = {
   isQuotedImage,
   isQuotedVideo,
+  isQuotedSticker,
   getMediaMessageContent,
   getFileBufferFromWhatsapp,
 };

@@ -1,4 +1,4 @@
-function getMessageText(messageInfo) {
+function getTextOfMessage(messageInfo) {
   return (
     Object.values({
       conversation: messageInfo?.message?.conversation,
@@ -9,6 +9,19 @@ function getMessageText(messageInfo) {
   );
 }
 
+function getTypeMessage(messageInfo) {
+ const { message } = messageInfo;
+
+  if (message.extendedTextMessage || message.conversation) return "text";
+  if (message.imageMessage) return "image";
+  if (message.videoMessage) return "video";
+  if (message.stickerMessage) return "sticker";
+  if (message.audioMessage) return "audio";
+
+  return "unknown";
+}
+
 module.exports = {
-  getMessageText,
+  getTextOfMessage,
+  getTypeMessage
 };

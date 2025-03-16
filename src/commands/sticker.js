@@ -19,7 +19,7 @@ module.exports = {
         const mediaBuffer = await getFileBufferFromWhatsapp(media, mediaType);
 
         const stickerBuffer = await createSticker(mediaBuffer, {
-          author: "nem te conto",
+          author: "mneto_nx",
         });
 
         return sock.sendMessage(chatId,

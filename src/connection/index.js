@@ -39,7 +39,7 @@ async function connectToWhatsApp() {
 
   sock.ev.on("creds.update", saveCreds);
 
-  rl.close();
+  await new Promise(resolve => rl.on("close", resolve));
 
   return sock;
 }

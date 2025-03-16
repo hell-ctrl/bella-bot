@@ -8,7 +8,7 @@ async function addStickerMetaData(mediaPath, metadata) {
     const img = new webp.Image();
     
     const json = {
-      "sticker-pack-id": `Anny Bot`,
+      "sticker-pack-id": `Bella Bot`,
       "sticker-pack-name": metadata.packname,
       "sticker-pack-publisher": metadata.author,
       emojis: metadata.categories ? metadata.categories : [""],

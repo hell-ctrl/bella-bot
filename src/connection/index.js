@@ -35,11 +35,11 @@ async function connectToWhatsApp() {
     const code = await sock.requestPairingCode(phoneNumber);
     console.log(`Seu código de conexão é: ${clc.bold(code)}\n`);
     console.log(`Abra seu WhatsApp, vá em ${clc.bold("Aparelhos Conectados > Conectar um novo Aparelho > Conectar usando Número.")}`);
-
-    rl.close()
   };
 
   sock.ev.on("creds.update", saveCreds);
+
+  rl.close()
 
   return sock;
 }

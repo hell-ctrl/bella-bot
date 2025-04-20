@@ -2,7 +2,7 @@ const fs = require("fs");
 
 module.exports = {
   name: "menu",
-  description: "Velocidade do bot.",
+  description: "Menu de comandos do bot.",
   run: ({ sock, chatId, prefix, quoted, sender, pushName }) => {
     const n = "`";
 
